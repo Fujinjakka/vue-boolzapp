@@ -127,11 +127,10 @@
   background-color: black;
   border-radius: 50%;
 }
-#main_left_bottom p {
 
-}
 .contact {
   display: flex;
+  align-items: center;
   margin: 10px 0;
 }
 .contact:hover {
@@ -151,17 +150,13 @@
   overflow-y: scroll;
   background-image: url("img/sfondo.png");
 }
-#main_right_bottom {
-  height: 80px;
-  width: 100%;
-  background-color: #F3EEEA;
-}
 #messages {
   height: calc(100% - 80px);
   display: flex;
   flex-direction: column;
 }
 .message {
+  position: relative;
   width: 35%;
   margin: 10px;
   padding: 10px 10px 20px 10px;
@@ -174,4 +169,34 @@
 .received {
   background-color: #D5F9BA;
   align-self: flex-end;
+}
+.date {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 10px;
+  color: lightgrey;
+}
+
+#main_right_bottom {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  background-color: #F3EEEA;
+}
+#main_right_bottom i {
+  text-align: center;
+  width: 10%;
+  font-size: 20px;
+  color: grey;
+}
+#main_right_bottom i:hover {
+  cursor: pointer;
+}
+#main_right_bottom input {
+  width: 80%;
+  height: 70%;
+  border: none;
+  padding-left: 20px;
 }

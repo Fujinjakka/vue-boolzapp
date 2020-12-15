@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.7/dayjs.min.js" integrity="sha512-kZ+x2gdehn6OZMWZSp3Vt5R+v9hQTYEATQwaUfWquhxbvNVAy6IRtYs7asdyxKUTqG0I5ZqBqnzcBrpnHJCAGw==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>Boolzap</title>
   </head>
@@ -54,16 +55,21 @@
                   <img :src="contact.avatar">
                   <div>
                     <h3>{{contact.name}}</h3>
-                    <p>messaggio contatto</p>
                   </div>
                 </div>
               </div>
             </div>
             <div id="main_right">
               <div id="messages">
-                <div v-for="message in contacts[selectedIndex].messages" :class="message.status" class="message">{{message.text}}</div>
+                <div v-for="message in contacts[selectedIndex].messages" :class="message.status" class="message">{{message.text}}
+                  <div class="date">{{message.date}}</div>
+                </div>
               </div>
-              <div id="main_right_bottom"></div>
+              <div id="main_right_bottom">
+                <i class="far fa-smile"></i>
+                <input type="text" placeholder="Scrivi messaggio" v-model="newMessage" @keydown.enter="addNewMessage">
+                <i class="fas fa-microphone"></i>
+              </div>
             </div>
           </div>
 

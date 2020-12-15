@@ -64,8 +64,8 @@ var app = new Vue(
       			},
       			{
       				date: '28/03/2020 16:15:22',
-      				text: 'Ah scusa!',
-      				status: 'received'
+      				text: 'Fuori portata!',
+      				status: 'sent'
       			}
       		],
       	},
@@ -87,11 +87,31 @@ var app = new Vue(
       		],
       	}
       ],
-      selectedIndex: 0
+      selectedIndex: 0,
+      newMessage: ""
     },
     methods: {
       selectedContact: function(newIndex) {
         this.selectedIndex = newIndex;
+      },
+      addNewMessage: function () {
+        var newUserMessage = {
+          date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+          text: this.newMessage,
+          status: 'sent'
+        };
+        this.contacts[this.selectedIndex].messages.push(newUserMessage);
+        this.newMessage = "";
+
+        setTimeout(function() {
+          var newAutoMessage = {
+            date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+            text: "Io sono un Avengers!!! Porta rispetto!!!",
+            status: 'received'
+          };
+          app.contacts[app.selectedIndex].messages.push(newAutoMessage);
+          app.newMessage = "";
+        },1000);
       }
     }
   }
