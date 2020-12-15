@@ -10,17 +10,17 @@ var app = new Vue(
       		messages: [
       			{
       				date: '10/01/2020 15:30:55',
-      				text: 'Hai portato a spasso il cane?',
+      				text: 'Un genio....miliardario, playboy, filantropo!',
       				status: 'sent'
       			},
       			{
       				date: '10/01/2020 15:50:00',
-      				text: 'Ricordati di dargli da mangiare',
+      				text: 'Dottor Banner! Questo sarebbe un buon momento per arrabbiarsi!',
       				status: 'sent'
       			},
       			{
       				date: '10/01/2020 16:15:22',
-      				text: 'Tutto fatto!',
+      				text: 'Ti svelo un segreto: io sono sempre arrabbiato!',
       				status: 'received'
       			}
       		],
@@ -32,17 +32,17 @@ var app = new Vue(
       		messages: [
       			{
       				date: '20/03/2020 16:30:00',
-      				text: 'Ciao come stai?',
+      				text: 'Deve esserci qualcun altro da chiamare... Per esempio Thor?',
       				status: 'sent'
       			},
       			{
       				date: '20/03/2020 16:30:55',
-      				text: 'Bene grazie! Stasera ci vediamo?',
+      				text: 'Fuori portata.',
       				status: 'received'
       			},
       			{
       				date: '20/03/2020 16:35:00',
-      				text: 'Mi piacerebbe ma devo andare a fare la spesa.',
+      				text: 'Ok ci penso io!',
       				status: 'sent'
       			}
       		],
@@ -54,12 +54,12 @@ var app = new Vue(
       		messages: [
       			{
       				date: '28/03/2020 10:10:40',
-      				text: 'La Marianna va in campagna',
+      				text: 'Dottor Banner! Questo sarebbe un buon momento per arrabbiarsi!',
       				status: 'received'
       			},
       			{
       				date: '28/03/2020 10:20:10',
-      				text: 'Sicuro di non aver sbagliato chat?',
+      				text: 'Ti svelo un segreto: io sono sempre arrabbiato!',
       				status: 'sent'
       			},
       			{
@@ -71,29 +71,27 @@ var app = new Vue(
       	},
       	{
       		name: 'Captain America',
-      		avatar: 'img/captainamerica',
+      		avatar: 'img/captainamerica.png',
       		visible: true,
       		messages: [
       			{
       				date: '10/01/2020 15:30:55',
-      				text: 'Lo sai che ha aperto una nuova pizzeria?',
+      				text: 'Sei grosso con l armatura, ma senza quella, che cosa sei?',
       				status: 'sent'
       			},
       			{
       				date: '10/01/2020 15:50:00',
-      				text: 'Si, ma preferirei andare al cinema',
+      				text: 'Un genio....miliardario, playboy, filantropo!',
       				status: 'received'
       			}
       		],
-      	},]
-      },
-
+      	}
+      ],
+      selectedIndex: 0
+    },
     methods: {
-      functionName: function () {
-        this.elementName.push(this.elementName);
-      },
-      functionName: function (item) {
-        this.elementName.splice(this.elementName.indexOf(item), 1);
+      selectedContact: function(newIndex) {
+        this.selectedIndex = newIndex;
       }
     }
   }

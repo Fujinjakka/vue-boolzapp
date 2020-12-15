@@ -13,8 +13,8 @@
   position: relative;
 }
 #container {
-  height: calc(100% - 10%);
-  width: calc(100% - 30%);
+  height: 90%;
+  width: 70%;
   position: absolute;
   top: 5%;
   left: 15%;
@@ -26,24 +26,15 @@
   width: 100%;
   display: flex;
 }
-#header_left {
-  height: 100%;
-  width: 35%;
-  border-right: 1px solid lightgrey;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-#header_left img {
+#header img {
   height: 70px;
   margin: 0 10px;
   background-color: black;
   border-radius: 50%;
 }
-#header_left p {
-  font-size: 20px;
+#header p {
+  font-size: 18px;
   font-weight: 800;
-  font-family: 'Sora', sans-serif;
 }
 .icons {
   color: grey;
@@ -54,11 +45,25 @@
 .icons i {
   margin: 0 10px;
 }
+.icons i:hover {
+  cursor: pointer;
+}
 
+#header_left {
+  height: 100%;
+  width: 35%;
+  border-right: 1px solid lightgrey;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 #header_right {
   height: 100%;
   width: 65%;
   border-left: 1px solid lightgrey;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 /* MAIN */
@@ -68,6 +73,8 @@
   background-color: white;
   display: flex;
 }
+
+/* MAIN LEFT */
 #main_left {
   height: 100%;
   width: 35%;
@@ -112,21 +119,59 @@
 #main_left_bottom {
   height: calc(100% - 140px);
   width: 100%;
-  border: 1px solid black;
+  overflow-y: scroll;
+}
+#main_left_bottom img {
+  height: 70px;
+  margin: 0 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+#main_left_bottom p {
+
+}
+.contact {
+  display: flex;
+  margin: 10px 0;
+}
+.contact:hover {
+  background-color: #EAEAEA;
+  cursor: pointer;
+}
+.active {
+  background-color: lightgrey;
 }
 
 
-
-
-
-
-
-
-
-
+/* MAIN RIGHT */
 
 #main_right {
   height: 100%;
   width: 65%;
+  overflow-y: scroll;
   background-image: url("img/sfondo.png");
+}
+#main_right_bottom {
+  height: 80px;
+  width: 100%;
+  background-color: #F3EEEA;
+}
+#messages {
+  height: calc(100% - 80px);
+  display: flex;
+  flex-direction: column;
+}
+.message {
+  width: 35%;
+  margin: 10px;
+  padding: 10px 10px 20px 10px;
+  border-radius: 10px;
+  word-break: break-all;
+}
+.sent {
+  background-color: white;
+}
+.received {
+  background-color: #D5F9BA;
+  align-self: flex-end;
 }
